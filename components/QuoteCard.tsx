@@ -7,8 +7,14 @@ interface QuoteCardProps {
 }
 
 export const QuoteCard = forwardRef<HTMLDivElement, QuoteCardProps>(({ quote, isLoading }, ref) => {
+  // Clean content and source to prevent double quoting in UI
+  // Strip starting/ending quotes from content
+  const cleanContent = quote.content.replace(/^[“"']|[”"']$/g, '');
+  // Strip starting/ending book marks from source
+  const cleanSource = quote.source.replace(/^[《<]|[》>]$/g, '');
+
   // Determine if text is very long to adjust font size gracefully
-  const isLongText = quote.content.length > 40;
+  const isLongText = cleanContent.length > 40;
   
   // Format current date for the card
   const todayDate = useMemo(() => {
@@ -54,7 +60,7 @@ export const QuoteCard = forwardRef<HTMLDivElement, QuoteCardProps>(({ quote, is
                         font-serif font-bold text-gray-900 text-center z-10 relative px-2
                         ${isLongText ? 'text-xl md:text-2xl leading-loose tracking-wide' : 'text-2xl md:text-3xl leading-relaxed tracking-widest'}
                       `}>
-                        {quote.content}
+                        {cleanContent}
                       </h1>
 
                       {/* Quote Symbol Bottom */}
@@ -70,7 +76,7 @@ export const QuoteCard = forwardRef<HTMLDivElement, QuoteCardProps>(({ quote, is
                         <span className="text-gray-900 font-bold text-base tracking-[0.2em]">毛泽东</span>
                      </div>
                      <div className="text-stone-500 text-xs font-serif tracking-wider text-right flex flex-col items-end font-medium">
-                        <span className="mb-1">《{quote.source}》</span>
+                        <span className="mb-1">《{cleanSource}》</span>
                         {quote.year && <span className="text-stone-400 text-[10px]">{quote.year}</span>}
                      </div>
                   </div>

@@ -138,6 +138,7 @@ const App: React.FC = () => {
 
       <footer className="text-center text-[10px] text-stone-400 font-sans pb-6 z-10 tracking-wider uppercase opacity-60">
         <p>© {new Date().getFullYear()} Red Inspiration Generator</p>
+        <p className="mt-1">内容由AI辅助生成</p>
       </footer>
     </div>
   );
