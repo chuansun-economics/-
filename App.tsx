@@ -83,7 +83,7 @@ const App: React.FC = () => {
           红色指引
         </h1>
         <p className="text-stone-500 text-sm md:text-base font-serif italic opacity-75">
-          毛选的智慧
+          Answers from the Selected Works of Mao Zedong
         </p>
       </header>
 
@@ -91,14 +91,14 @@ const App: React.FC = () => {
         <div className="w-full max-w-md">
             {!hasStarted ? (
                 <div className="flex flex-col items-center justify-center animate-fade-in p-8 border border-dashed border-stone-300 rounded-sm bg-white/40 backdrop-blur-sm w-full aspect-[3/4.5] min-h-[520px]">
-                    <div className="w-20 h-20 bg-stone-100 rounded-full flex items-center justify-center mb-8 text-stone-300 shadow-inner">
+                    <div className="w-20 h-20 bg-stone-100 rounded-full flex items-center justify-center mb-10 text-stone-300 shadow-inner">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                         </svg>
                     </div>
-                    <p className="text-center text-stone-500 font-serif mb-2 text-lg">心中的困惑</p>
-                    <p className="text-center text-stone-400 font-serif text-sm px-8 leading-relaxed">
-                        默念你的问题，在这里寻找破局的智慧与奋斗的力量。
+                    <p className="text-center text-stone-600 font-serif mb-4 text-xl tracking-[0.2em] font-medium">心之所惑，请教毛选</p>
+                    <p className="text-center text-stone-400 font-serif text-sm px-6 leading-8 tracking-widest opacity-80">
+                        于字里行间<br/>寻破局之智与奋斗之光
                     </p>
                 </div>
             ) : (
@@ -106,13 +106,13 @@ const App: React.FC = () => {
             )}
         </div>
 
-        <div className="mt-12 mb-8">
+        <div className="mt-12 mb-8 flex flex-col items-center space-y-4">
           <button
             onClick={handleGenerateQuote}
             disabled={loading}
             className={`
                 group relative inline-flex items-center justify-center px-12 py-4 text-lg text-white transition-all duration-300 
-                bg-mao-red font-serif tracking-[0.2em] rounded-full shadow-lg shadow-red-900/20 overflow-hidden
+                bg-mao-red font-serif tracking-[0.2em] rounded-full shadow-lg shadow-red-900/20 overflow-hidden w-64
                 ${loading ? 'cursor-default opacity-90' : 'hover:bg-[#b00e28] hover:shadow-xl hover:shadow-red-900/30 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]'}
             `}
           >

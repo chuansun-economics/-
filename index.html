@@ -20,16 +20,12 @@
             },
             animation: {
               'fade-in': 'fadeIn 0.8s ease-out forwards',
-              'slide-up': 'slideUp 0.5s ease-out forwards',
+              'gentle-fade': 'fadeIn 0.4s ease-out forwards',
             },
             keyframes: {
               fadeIn: {
                 '0%': { opacity: '0' },
                 '100%': { opacity: '1' },
-              },
-              slideUp: {
-                '0%': { opacity: '0', transform: 'translateY(20px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
               }
             }
           },
@@ -43,7 +39,8 @@
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
     "react/": "https://aistudiocdn.com/react@^19.2.1/",
     "react": "https://aistudiocdn.com/react@^19.2.1",
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0"
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
+    "html2canvas": "https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.esm.js"
   }
 }
 </script>
